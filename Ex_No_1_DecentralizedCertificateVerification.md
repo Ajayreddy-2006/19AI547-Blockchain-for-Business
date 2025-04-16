@@ -10,23 +10,28 @@
 ```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
-contract CertificateVerification {
-address public university;
-mapping(bytes32 => bool) public certificates; // Store hashed certificates
-event CertificateIssued(bytes32 indexed certHash);
-constructor() {
-university = msg.sender; // University deploys the contract
-}
-function issueCertificate(string memory studentName, string memory degree, uint256 year) public {
-require(msg.sender == university, "Only university can issue certificates");
-bytes32 certHash = keccak256(abi.encodePacked(studentName, degree, year));
-certificates[certHash] = true;
-emit CertificateIssued(certHash);
-}
-function verifyCertificate(string memory studentName, string memory degree, uint256 year) public view returns (bool) {
-bytes32 certHash = keccak256(abi.encodePacked(studentName, degree, year));
-return certificates[certHash];
-}
+
+contract certificateVerification {
+    address public university;
+    mapping(bytes32=>bool) public certificates;
+
+    event CertificateIssued(bytes32 certHash);
+    constructor() {
+        university = msg.sender;
+    }
+
+    function issueCertificate(string memory studentName, string memory degree, uint year)public {
+        require(msg.sender == university, "Only university can issue certificates");
+
+        bytes32 certHash = keccak256(abi.encodePacked(studentName, degree, year));
+        certificates[certHash] = true;
+        emit CertificateIssued(certHash);
+    }
+
+    function verifyCertificate(string memory studentName, string memory degree, uint256 year) public view returns (bool) {
+        bytes32 certHash = keccak256(abi.encodePacked(studentName, degree, year));
+        return certificates[certHash];
+    }
 }
 ```
 # Expected Output:
@@ -40,4 +45,12 @@ High-Level Overview:
 ● Shows how blockchain can be used in education and credential verification.
 ```
 # Result:
+when certificate is verified
+
+![WhatsApp Image 2025-04-16 at 09 19 09_d55ca997](https://github.com/user-attachments/assets/a44195c4-1083-4ee8-8d67-9291f6472c6b)
+
+when certificate is not verified
+
+![WhatsApp Image 2025-04-16 at 09 19 09_a34145b6](https://github.com/user-attachments/assets/75a55264-2276-40c3-b42c-aaefb205d38c)
+
 
