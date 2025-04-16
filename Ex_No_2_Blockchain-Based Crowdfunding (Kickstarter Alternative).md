@@ -77,3 +77,10 @@ Teaches decentralized fundraising.
 Avoids fraud by ensuring funds are only transferred if the goal is met.
 
 # RESULT: 
+when ether value is below 5
+
+![4](https://github.com/user-attachments/assets/bda34636-7a2a-40eb-9295-337cdcadad90)
+
+when ether value is above 5
+
+![5](https://github.com/user-attachments/assets/6747cd6b-aa78-40fb-9459-c58229fe1f11)
