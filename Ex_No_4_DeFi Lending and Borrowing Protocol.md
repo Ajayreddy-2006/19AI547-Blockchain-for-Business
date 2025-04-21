@@ -95,3 +95,22 @@ Directly related to DeFi protocols like Aave and Compound.
 
 # RESULT : 
 
+DEPLOY 1 ST ACCOUNT
+
+![1](https://github.com/user-attachments/assets/91deec4a-b207-41f5-bbc0-c680217e0656)
+
+DEPOSITE
+
+![2](https://github.com/user-attachments/assets/8a6cc26c-3b8d-4f9c-9c10-48e6e32a4824)
+
+DEPLOY 2 ACCOUNT
+
+![3](https://github.com/user-attachments/assets/cb42bf82-505f-48e7-8db4-532806a78476)
+
+COLLATERAL
+
+![44](https://github.com/user-attachments/assets/4689d50e-1d8b-4c99-91a9-7e8bef8cb328)
+
+BORROW
+
+![55](https://github.com/user-attachments/assets/5a51b0c7-f496-40c8-8f1d-9a2ba9ce7205)
