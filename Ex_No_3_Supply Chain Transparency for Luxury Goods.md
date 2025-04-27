@@ -1,42 +1,29 @@
-# Experiment : Supply Chain Transparency for Luxury Goods
+# Ex_No_3_Supply Chain Transparency for Luxury Goods
 
-## Date : 21.04.2025
+
+## Name:T Ajay
+## Reg no:212223230007
+## Date:27/4/25
 
 # Aim:
 To develop a smart contract that tracks the supply chain of luxury goods, ensuring authenticity.
 
 # Algorithm:
+Step 1:
+The manufacturer records product creation details on-chain.
 
-### Step 1 : 
-Manufacturer registers a product with unique productId and name.
+Step 2:
+The product moves through different supply chain checkpoints.
 
-### Step 2: 
-Product details (name, owner, verified status) are recorded on-chain.
+Step 3:
+The ownership of the product can be transferred securely.
 
-### Step 3:
-At each checkpoint, the current owner can transfer ownership to the next party in the chain.
-
-### Step 4:
-Ownership transfer is allowed only if the sender is the current owner.
-
-### Step 5:
-Each transfer is logged via an event (OwnershipTransferred).
-
-### Step 6:
-Anyone (e.g., buyer) can call verifyProduct(productId) to:
-View the name, current owner, and verification status.
-
-### Step 7:
-If the product exists and is verified, it's authentic.
-
-### Step 8:
-The chain ensures traceability and trust.
+Step 4:
+Buyers can verify the product’s authenticity.
 
 
 # Program:
 ```
-Register Number: 212222100058
-
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
@@ -71,12 +58,17 @@ contract LuxurySupplyChain {
 }
 ```
 # Expected Output:
-![image](https://github.com/user-attachments/assets/ce090c06-b49c-4b48-b730-d427d3e92350)
+A luxury good (e.g., a Rolex watch) is registered on-chain.
+![image](https://github.com/user-attachments/assets/679b717e-617b-4b3d-bfe3-49d78ab10ef1)
 
-![image](https://github.com/user-attachments/assets/cb3ca2cb-951b-4ef2-a610-435ed506afd4)
 
-![image](https://github.com/user-attachments/assets/316c7f96-767a-4af5-876f-577e5dbb05e2)
+Ownership is transferred at every checkpoint.
 
+![image](https://github.com/user-attachments/assets/735ae731-d59c-44a2-a575-8b97dc5911e2)
+
+Buyers can check the authenticity before purchasing.
+
+![image](https://github.com/user-attachments/assets/98b4bb3e-4bb3-4e64-8f68-a0275e91e4e9)
 
 # High-Level Overview:
 Helps prevent counterfeit luxury goods.
@@ -84,5 +76,5 @@ Helps prevent counterfeit luxury goods.
 Teaches real-world supply chain use cases.
 
 # RESULT : 
-Thus, the Supply Chain Transparency for Luxury Goods has been implemented successfully.
 
+Thus, smart contract that tracks the supply chain of luxury goods, ensuring authenticity has been created and successfully executed.
