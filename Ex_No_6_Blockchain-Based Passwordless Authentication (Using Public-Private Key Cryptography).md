@@ -42,17 +42,17 @@ contract PasswordlessAuth {
 
 # Expected Output:
 Users can register without a password.
-![image](https://github.com/user-attachments/assets/009a0337-5215-49c9-a694-1c6708f1c99d)
+![image](https://github.com/user-attachments/assets/85c00289-3857-49a6-ad53-c673935790f2)
 
 
 Users sign a challenge with their private key for authentication.
-![image](https://github.com/user-attachments/assets/5828c38a-d3c6-45aa-9508-326f055f27ad)
+![image](https://github.com/user-attachments/assets/5c601ee1-b7a9-408c-a0aa-08b4c2dcac4a)
 
 
 The smart contract verifies signatures to confirm identity.
-![Screenshot (74)](https://github.com/user-attachments/assets/5a353dd9-80b0-4ad6-9f1c-57b732ba5dfd)
+![image](https://github.com/user-attachments/assets/35047963-b851-493e-85fb-84f09a529d3c)
 
-![Screenshot (75)](https://github.com/user-attachments/assets/276590d1-5956-4275-8711-6b00646f9fc5)
+![image](https://github.com/user-attachments/assets/5137e293-f72a-4793-9531-a6edc71f026e)
 
 
 
