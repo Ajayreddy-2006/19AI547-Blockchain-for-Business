@@ -1,33 +1,41 @@
 # Experiment 4: DeFi Lending and Borrowing Protocol
+
+
 # Aim:
 To build a decentralized lending protocol where users can deposit assets to earn interest and borrow assets by providing collateral. This experiment introduces concepts like overcollateralization, liquidity pools, and interest accrual in DeFi.
 
 # Algorithm:
-Step 1: Setup Lending and Borrowing Mechanism
-Users deposit ETH into the contract as liquidity.
 
+### Step 1: 
+Deploy contract and set the owner, interest rate, and liquidation threshold.
 
-Depositors receive interest based on their deposits.
+### Step 2: 
+User deposits funds by calling deposit() and sending Ether to the contract.
 
+### Step 3: 
+Check collateral and ensure it meets the required threshold for borrowing.
 
-Borrowers can borrow ETH but must provide collateral (e.g., 150% of the borrowed amount).
+### Step 4: 
+User borrows funds by calling borrow(amount), transferring borrowed funds to the user.
 
+### Step 5: 
+Record deposits in the deposits mapping and borrowed amounts in the borrowed mapping.
 
-Interest on borrowed funds is calculated dynamically based on utilization rate.
+### Step 6: 
+Accumulate interest (future step, not implemented in current contract).
 
+### Step 7: 
+Check liquidation if the user’s collateral is below 150% of the borrowed amount.
 
-Step 2: Implement Overcollateralization
-If a borrower’s collateral value drops below a certain liquidation threshold, their collateral is liquidated to repay the debt.
-
-
-Step 3: Allow Liquidation
-If collateral < liquidation threshold, liquidators can repay the borrower's debt and claim their collateral at a discount.
+### Step 8: 
+Liquidate borrower by calling liquidate() and transferring seized collateral to the caller.
 
 
 
 Program:
 ```
-// SPDX-License-Identifier: MIT
+
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
 contract DeFiLending {
@@ -53,11 +61,16 @@ contract DeFiLending {
     }
 
     function borrow(uint256 amount) public payable {
-        require(msg.value >= (amount * liquidationThreshold) / 100, "Not enough collateral");
+        require(msg.value >= (amount * liquidationThreshold) / 100, "Nota enough collateral");
         borrowed[msg.sender] += amount;
         collateral[msg.sender] += msg.value;
         payable(msg.sender).transfer(amount);
         emit Borrowed(msg.sender, amount, msg.value);
+    }
+    function reduceCollateral(address user, uint256 amount) public {
+    require(msg.sender == owner, "Only owner can reduce");
+    require(collateral[user] >= amount, "Not enough collateral to reduce");
+    collateral[user] -= amount;
     }
 
     function liquidate(address borrower) public {
@@ -72,15 +85,14 @@ contract DeFiLending {
     }
 }
 
+
 ```
 # Expected Output:
-Users can deposit ETH and earn interest.
 
-
-Users can borrow ETH by providing collateral.
-
-
-If collateral < 150% of borrowed amount, liquidators can seize the collateral.
+![image](https://github.com/user-attachments/assets/af2be60f-07e9-4cfd-b421-b245626fbd02)
+![image](https://github.com/user-attachments/assets/086ed55e-301b-4d94-8a51-6dbdbef1fffc)
+![image](https://github.com/user-attachments/assets/e5d04fc8-b7b9-40a0-b2aa-afc5e296cc9d)
+![image](https://github.com/user-attachments/assets/bd6b8089-2d5d-4735-b109-f222a93398e4)
 
 
 
@@ -94,23 +106,5 @@ Introduces risk management: overcollateralization and liquidation.
 Directly related to DeFi protocols like Aave and Compound.
 
 # RESULT : 
+Thus, a DeFi Lending and Borrowing Protocol has been successfully built and implenmented on Remix - Ethereum IDE
 
-DEPLOY 1 ST ACCOUNT
-
-![1](https://github.com/user-attachments/assets/91deec4a-b207-41f5-bbc0-c680217e0656)
-
-DEPOSITE
-
-![2](https://github.com/user-attachments/assets/8a6cc26c-3b8d-4f9c-9c10-48e6e32a4824)
-
-DEPLOY 2 ACCOUNT
-
-![3](https://github.com/user-attachments/assets/cb42bf82-505f-48e7-8db4-532806a78476)
-
-COLLATERAL
-
-![44](https://github.com/user-attachments/assets/4689d50e-1d8b-4c99-91a9-7e8bef8cb328)
-
-BORROW
-
-![55](https://github.com/user-attachments/assets/5a51b0c7-f496-40c8-8f1d-9a2ba9ce7205)
