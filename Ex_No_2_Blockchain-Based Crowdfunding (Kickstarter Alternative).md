@@ -3,18 +3,19 @@
 To create a decentralized crowdfunding platform where donors contribute funds only if the campaign goal is met.
 
 ## Algorithm:
-A project owner starts a campaign with a funding goal and deadline.
+1.Project owner deploys the contract by specifying a funding goal and deadline.
 
+2.Contributors send ETH to the contract before the deadline.
 
-Contributors can send ETH to the campaign.
+3.The contract tracks each contributor’s amount.
 
+4.If the total contributions meet or exceed the goal before the deadline:
 
-If the goal is met before the deadline, funds are released to the project owner.
+5.The creator can withdraw the full amount.
 
+6.If the goal is not met after the deadline:
 
-If the goal is not met, contributors can withdraw their funds.
-
-
+7.Contributors can withdraw their individual contributions.
 ## Program:
 ```
 // SPDX-License-Identifier: MIT
