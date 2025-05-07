@@ -4,22 +4,17 @@ To create a smart contract that integrates AI logic for automated negotiation in
 
 # Algorithm:
 ## Step 1: AI-Powered Dynamic Pricing
-Seller lists an item with a minimum price and negotiation range.
+1.The seller lists an item with a base price, minimum price, and maximum price.
 
+2.A buyer submits an offer, which is received and evaluated by the contract.
 
-Buyer submits an offer price.
+3.The contract uses AI-simulated logic to calculate a dynamic counteroffer based on price range and the submitted offer.
 
+4.If the offer meets or exceeds the AI counteroffer, the item is marked as sold and payment is transferred.
 
-AI logic (simulated using Solidity algorithms) evaluates the price based on:
+5.If the offer is too low, the contract refunds the buyer and emits a counteroffer suggestion.
 
-
-Market demand (tracked using on-chain transactions).
-
-
-Historical transaction data.
-
-
-Time-based price fluctuations.
+6.Each transaction can inform future pricing logic to simulate learning behavior.
 
 
 ## Step 2: Smart Contract Counteroffer
