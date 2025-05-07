@@ -3,21 +3,17 @@
 To implement a fully private and transparent voting system using Zero-Knowledge Proofs (ZKPs). This ensures that votes are counted fairly without revealing who voted for whom.
 
 # Algorithm:
-Step 1: Voter Registration
-Each voter generates a secret vote key and submits a commitment (hashed vote) to the contract.
+1.Each voter registers by submitting a hashed commitment of their vote using a secret and their choice.
 
+2.The smart contract stores this commitment without revealing any actual vote information.
 
-Step 2: Voting Process
-Voters submit their votes privately using a hash, without revealing their choice.
+3.During the voting phase, voters reveal their secret and choice.
 
+4.The contract verifies the hash matches the original commitment to ensure authenticity.
 
-Step 3: ZK Verification
-The contract verifies if a vote belongs to a registered voter but does not reveal the actual vote.
+5.Valid votes are counted for either option A or B.
 
-
-Step 4: Vote Counting
-Once voting ends, the contract reveals the final tally without linking votes to individuals.
-
+6.This process maintains vote privacy while ensuring accurate and tamper-proof tallying.
 
 
 # Program:
