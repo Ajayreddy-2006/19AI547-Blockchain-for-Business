@@ -9,17 +9,17 @@
 To develop a smart contract that tracks the supply chain of luxury goods, ensuring authenticity.
 
 # Algorithm:
-1.The manufacturer registers a product by providing a unique ID and name, which is stored on-chain and marked as verified.
+step 1.The manufacturer registers a product by providing a unique ID and name, which is stored on-chain and marked as verified.
 
-2.The contract ensures that duplicate registrations are not allowed.
+step 2.The contract ensures that duplicate registrations are not allowed.
 
-3.As the product moves through the supply chain, the current owner transfers ownership using the smart contract.
+step 3.As the product moves through the supply chain, the current owner transfers ownership using the smart contract.
 
-4.Each ownership transfer is logged with an event to maintain traceability.
+step 4.Each ownership transfer is logged with an event to maintain traceability.
 
-5.Buyers can verify the product’s authenticity and current owner at any time by querying the blockchain.
+step 5.Buyers can verify the product’s authenticity and current owner at any time by querying the blockchain.
 
-6.This ensures transparency and prevents counterfeit goods in the supply chain.
+step 6.This ensures transparency and prevents counterfeit goods in the supply chain.
 
 
 # Program:
