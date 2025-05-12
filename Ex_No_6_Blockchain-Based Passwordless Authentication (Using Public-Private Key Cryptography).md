@@ -3,17 +3,17 @@
 To implement a secure passwordless authentication system using public-private key cryptography on Ethereum. This prevents phishing and password leaks.
 
 # Algorithm:
-1.The user registers by storing their Ethereum public key (address) in the contract.
+step 1.The user registers by storing their Ethereum public key (address) in the contract.
 
-2.During login, the server generates a random challenge message for the user to sign.
+step 2.During login, the server generates a random challenge message for the user to sign.
 
-3.The user signs the challenge using their private key off-chain.
+step 3.The user signs the challenge using their private key off-chain.
 
-4.The signature (v, r, s) is submitted to the smart contract along with the original message hash.
+step 4.The signature (v, r, s) is submitted to the smart contract along with the original message hash.
 
-5.The contract uses ecrecover to verify that the signer’s address matches the registered user.
+step 5.The contract uses ecrecover to verify that the signer’s address matches the registered user.
 
-6.If verified, the user is authenticated securely without needing a password.
+step 6.If verified, the user is authenticated securely without needing a password.
 
 
 
